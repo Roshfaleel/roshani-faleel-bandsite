@@ -1,0 +1,475 @@
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+@use "./partials/typography" as *;
+
+*,
+*::before,
+*::after {
+    @include box-sizing;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Avenir";
+    font-weight: 400;
+    color: $primary-color-1;
+}
+// .background {
+//     background-color: lightpink;
+
+//     @include tablet {
+//         background-color: green;
+//     }
+
+//     @include desktop {
+//         background-color: aqua;
+//     }
+// }
+h1 {
+    font-size: $font-extra-large;
+    line-height: $line-height-large;
+}
+
+h2 {
+    font-size: $font-large;
+    line-height: $line-height-medium;
+}
+
+h3,
+p {
+    font-size: $font-medium;
+    line-height: $line-height-regular;
+}
+li {
+    list-style-type: none;
+}
+a {
+    color: $primary-color-2;
+    text-decoration: none;
+}
+
+.navbar {
+    width: 100%;
+    // height: 98px;
+    background-color: $primary-color-1;
+    padding-left: 16px;
+    padding-top: 16px;
+    padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        padding-left: 36px;
+        padding-right: 36px;
+        flex-direction: row;
+        align-items: center;
+        gap: 64px;
+    }
+
+    &__logo {
+        text-align: center;
+
+        img {
+            height: 20px;
+            width: 120px;
+        }
+    }
+    &__menu {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        align-content: space-evenly;
+
+        @include tablet {
+            gap: 56px;
+        }
+    }
+    &__link {
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding-top: 16px;
+        padding-bottom: 16px;
+
+        &:hover,
+        &:active {
+            a {
+                color: $primary-color-3;
+                font-weight: 700;
+            }
+            border-bottom: 4px solid $primary-color-3;
+        }
+
+        &--active {
+            border-bottom: 4px solid $primary-color-3;
+            a {
+                color: $primary-color-3;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-image: url("../assets/images/hero-bio.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include tablet {
+        height: 68vh;
+    }
+    @include desktop {
+        height: 600px;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $primary-color-1;
+        opacity: 0.5;
+    }
+
+    h1 {
+        position: absolute;
+        padding-left: 16px;
+        top: 40%;
+        color: $primary-color-3;
+        font-size: $font-large;
+        font-weight: 700;
+        line-height: $line-height-medium;
+
+        @include tablet {
+            padding-left: 36px;
+            font-size: $font-extra-large;
+            line-height: $line-height-large;
+        }
+
+        // @include desktop {
+        //     padding-left: 80px;
+        // }
+    }
+}
+
+.about {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        padding-left: 36px;
+        padding-right: 36px;
+        padding-top: 48px;
+    }
+
+    // @include desktop {
+    //     padding-left: 80px;
+    //     padding-right: 80px;
+    //     padding-top: 40px;
+    // }
+
+    h2 {
+        font-size: $font-large;
+        font-weight: 700;
+        line-height: $line-height-medium;
+        margin: 0;
+        padding-bottom: 16px;
+
+        @include tablet {
+            padding-bottom: 36px;
+            font-size: $font-extra-large;
+            line-height: $line-height-large;
+        }
+
+        // @include desktop {
+        //     padding-bottom: 32px;
+        // }
+    }
+    &__card {
+        width: 100%;
+        @include tablet {
+            padding-left: 48px;
+            padding-right: 48px;
+        }
+
+        @include desktop {
+            padding-left: 56px;
+            padding-right: 56px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        p {
+            margin: 0;
+            padding-top: 16px;
+            font-size: $font-medium;
+            font-weight: 600;
+
+            @include tablet {
+                padding-top: 36px;
+                font-size: $font-large;
+                line-height: $line-height-medium;
+            }
+            @include desktop {
+                width: 80%;
+                // padding-top: 40px;
+                // font-size: $font-large;
+                // line-height: $line-height-medium;
+            }
+        }
+    }
+
+    #team {
+        @include tablet {
+            padding-top: 8px;
+            font-size: $font-medium;
+        }
+    }
+}
+
+.details {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+
+    @include tablet {
+        padding-left: 84px;
+        padding-right: 84px;
+    }
+
+    @include desktop {
+        padding-left: 92px;
+        padding-right: 92px;
+    }
+    h3 {
+        margin: 0;
+        padding-top: 24px;
+        font-size: $font-medium;
+        line-height: $line-height-regular;
+        color: $secondary-color-1;
+        font-weight: 600;
+
+        @include tablet {
+            padding-top: 32px;
+            font-size: $font-large;
+            line-height: $line-height-medium;
+        }
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+            gap: 24px;
+        }
+
+        p {
+            padding-top: 16px;
+            margin: 0;
+            font-size: $font-regular;
+            line-height: $line-height-extra-small;
+
+            @include tablet {
+                padding-top: 36px;
+                font-size: $font-medium;
+                line-height: $line-height-regular;
+            }
+        }
+    }
+}
+.gallery {
+    background-color: $secondary-color-3;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 24px;
+
+    @include tablet {
+        padding-top: 36px;
+        padding-bottom: 12px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    h2 {
+        margin: 0;
+        padding-bottom: 16px;
+        font-size: $font-large;
+        font-weight: 700;
+        line-height: $line-height-medium;
+
+        @include tablet {
+            padding-left: 36px;
+            padding-right: 36px;
+            font-size: $font-extra-large;
+            line-height: $line-height-large;
+        }
+    }
+
+    &__images {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 16px;
+        width: 100%;
+        justify-content: center;
+
+        @include tablet {
+            padding-left: 36px;
+            padding-right: 36px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            justify-items: stretch;
+        }
+
+        img {
+            padding-bottom: 16px;
+
+            @include tablet {
+                width: 31%;
+                padding-bottom: 24px;
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: $primary-color-1;
+    color: $primary-color-3;
+    padding: 24px 16px;
+    position: relative;
+
+    @include tablet{
+        padding: 48px 36px;
+    }
+
+
+
+    &__intro {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+
+        @include tablet{
+            flex-direction: row;
+            // width: 50%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include desktop{
+            width: 40%;
+            justify-content: flex-start;
+        }
+
+        h2 {
+        font-size: $font-large;
+        font-weight: 700;
+        line-height: $line-height-medium;
+        margin: 0;
+        // padding-bottom: 16px;
+
+        @include tablet{
+            font-size: $font-extra-large;
+            line-height: $line-height-large;
+            width: 16.25rem;
+        }
+        @include desktop{
+            width: 21.25rem;
+        }
+    }
+
+        &--icons {
+            display: flex;
+            justify-content: space-between;
+            width: 7.5rem;
+            padding-top: 16px;
+
+            @include tablet{
+                width: 40%;
+                width: 100px;
+                padding: 0;
+            }
+            img{
+                @include tablet{
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet{
+            flex-direction: row;
+            width: 100%;
+        justify-content: space-between;
+
+        }
+
+        @include desktop{
+            width: 70%;
+        }
+
+        h3 {
+            padding-top: 24px;
+            margin: 0;
+            font-size: $font-medium;
+            line-height: $line-height-regular;
+            font-weight: 600;
+
+        }
+
+        p {
+            margin: 0;
+            padding-top: 16px;
+            font-size: $font-regular;
+            line-height: $line-height-extra-small;
+        }
+    }
+
+    &__logo{
+        padding-top: 32px;
+        padding-bottom: 24px;
+        width: fit-content;
+
+        @include tablet{
+            position: absolute;
+            top: 21px;
+            right: 35px;
+        }
+
+        img{
+            height: 20px;
+            width: 120px;
+        }
+    }
+    &__copywrite{
+        p{
+            margin: 0;
+            font-size: $font-regular;
+            line-height: $line-height-extra-small;
+
+            @include tablet{
+                padding-top: 48px;
+            }
+        }
+    }
+}

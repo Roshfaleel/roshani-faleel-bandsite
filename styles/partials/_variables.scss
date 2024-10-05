@@ -1,0 +1,27 @@
+//breakpoints
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1080px;
+
+//font sizes
+$font-extra-large :2.25rem; // 36px for page header of desktop/tablet
+$font-large: 1.5rem;// 24px for section header of desktop/tablet | page header & section header of mobile
+$font-medium:.875rem; //14px for body copy, footer of desktop/tablet | subheading of mobile
+$font-regular: .8125rem; // 13px for body copy and footer copy of mobile
+$font-small: .75rem; // 12px for labels and buttons of desktop/tablet
+$font-extra-small: .625rem; // 10px for labels and buttons of mobile
+
+//line height
+$line-height-large : 2.75rem; //44px for page header of desktop/tablet
+$line-height-medium : 2rem; //32px for section header of desktop/mobile | page header, section header of mobile
+$line-height-regular :1.375rem; //22px body copy of desktop/table | sub header of mobile
+$line-height-small : 1.25rem; //20px footer, label and buttons of desktop/mobile | labels & buttons of mobile
+$line-height-extra-small : 1.125rem; // 18px for body copy and footer coby of mobile
+
+//colors
+$primary-color-1 : #323232; //Bandsite-black
+$primary-color-2 :#AFAFAF; //Silver
+$primary-color-3 : #FFFFFF; // white
+
+$secondary-color-1 :#000000; //Bandsite-Darkblack
+$secondary-color-2 :#E1E1E1; //Mercury
+$secondary-color-3 :#FAFAFA ;//Alabaster
