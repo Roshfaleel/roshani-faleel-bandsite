@@ -164,6 +164,14 @@ a {
             @include h3-font-mob;
             font-weight: 600;
             padding-top: $padding-medium;
+            text-shadow: 0;
+            transition: transform 0.3s ease;
+
+            &:hover{
+                text-shadow: 1.25rem 1.25rem 0.625rem rgb(210, 208, 208);
+                transform: translateY(-5px);
+                z-index: 1;
+            }
 
             @include tablet {
                 padding-top: $padding-large;
@@ -251,9 +259,18 @@ a {
             flex-wrap: wrap;
             justify-content: space-between;
         }
-
         img {
             padding-bottom: $padding-medium;
+            filter: grayscale(100%);
+            transition:
+                filter 0.3s ease,
+                transform 0.3s ease;
+
+            &:hover {
+                filter: grayscale(0%);
+                transform: translateY(-5px);
+                z-index: 1;
+            }
 
             @include tablet {
                 width: 31%;
@@ -349,6 +366,9 @@ a {
 
             @include tablet {
                 @include footer-p-tab;
+            }
+            a {
+                color: $primary-color-3;
             }
         }
     }

@@ -194,6 +194,13 @@ a {
   font-weight: 600;
   font-weight: 600;
   padding-top: 1rem;
+  text-shadow: 0;
+  transition: transform 0.3s ease;
+}
+.about__card p:hover {
+  text-shadow: 1.25rem 1.25rem 0.625rem rgb(210, 208, 208);
+  transform: translateY(-5px);
+  z-index: 1;
 }
 @media screen and (min-width: 768px) {
   .about__card p {
@@ -303,6 +310,13 @@ a {
 }
 .gallery__images img {
   padding-bottom: 1rem;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.gallery__images img:hover {
+  filter: grayscale(0%);
+  transform: translateY(-5px);
+  z-index: 1;
 }
 @media screen and (min-width: 768px) {
   .gallery__images img {
@@ -417,6 +431,9 @@ a {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
+}
+.footer__contact p a {
+  color: #FFFFFF;
 }
 .footer__logo {
   padding-top: 2rem;
