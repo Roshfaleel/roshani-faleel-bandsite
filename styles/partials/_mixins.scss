@@ -1,4 +1,4 @@
-@use './variables' as *;
+@use "./variables" as *;
 
 @mixin tablet {
   @media screen and (min-width: $tablet-breakpoint) {
@@ -11,6 +11,72 @@
     @content;
   }
 }
-@mixin box-sizing{
-    box-sizing: border-box;
+@mixin box-sizing {
+  box-sizing: border-box;
+}
+
+//---logo--
+@mixin logo {
+  height: 1.25rem;
+  width: 7.5rem;
+}
+
+//----FONTS----
+
+//h1 - both desktop and tablet - page header
+@mixin h1-font-tab {
+  font-size: 3.75rem;
+  line-height: 4.25rem;
+  font-weight: 700;
+}
+
+//h1 - mobile -page header and h2 - mobile - section header
+@mixin h1-font-mob {
+  font-size: $font-large;
+  line-height: $line-height-medium;
+  font-weight: 700;
+}
+
+//h2 - both desktop and tablet - section header
+@mixin h2-font-tab {
+  font-size: $font-extra-large;
+  line-height: $line-height-large;
+  font-weight: 700;
+}
+
+//h3 - desktop and tablet - subheader
+@mixin h3-font-tab {
+  font-size: $font-large;
+  line-height: $line-height-medium;
+  font-weight: 600;
+}
+
+//h3 - mobile - subheader
+@mixin h3-font-mob {
+  font-size: $font-medium;
+  line-height: $line-height-regular;
+  font-weight: 600;
+}
+
+//p - desktop and tablet - body copy
+@mixin p-font-tab {
+  font-size: $font-medium;
+  line-height: $line-height-regular;
+}
+
+//p - mobile - body copy
+@mixin p-font-mob {
+  font-size: $font-regular;
+  line-height: $line-height-extra-small;
+}
+
+//p-desktop and tablet
+@mixin footer-p-tab {
+  font-size: $font-medium;
+  line-height: $line-height-small;
+}
+
+@mixin footer-p-mob {
+  font-size: $font-regular;
+  line-height: $line-height-extra-small;
 }
