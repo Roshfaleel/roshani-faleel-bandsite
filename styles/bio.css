@@ -375,6 +375,7 @@ a {
 .footer__intro--icons {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   width: 7.5rem;
   padding-top: 1rem;
 }
