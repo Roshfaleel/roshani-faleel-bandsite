@@ -282,14 +282,42 @@ a {
 }
 #comment-header{
     padding: $padding-regular $padding-medium;
+        @include h1-font-mob;
+
+        @include tablet {
+            // padding: 0 $padding-large $padding-large;
+            padding-left: 0;
+            padding-bottom: 36px;
+            padding-top: 0;
+            // padding-bottom: 0px;
+            @include h2-font-tab;
+        }
+}
+#comment-section{
+    margin-left: 16px;
+    margin-right: 16px;
+    @include tablet {
+        padding: $padding-extra-large $padding-large;
+        margin: 0;
+    }
 }
 
-.new-comment{
-   margin-left: 16px;
-    margin-right: 16px;
+#comment-area{
     display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid $primary-color-2;
+    flex-direction: column;
+    align-content: center;
+    @include desktop {
+        padding: 0 5.75rem $padding-large 5.75rem;
+        width: 70%;
+        margin: auto;
+    }
+}
+.new-comment{
+
+    display: flex;
+    // justify-content: s;
+    gap: 2rem;
+    border-bottom: 1px solid $primary-color-2;
 
     &__avatar{
        border-radius: 50%;
@@ -298,11 +326,12 @@ a {
                 background-image: url(../assets/images/Mohan-muruge.jpg);
                 background-position: center;
                 background-size: cover;
+                margin-top: 20px;
     }
 
 
     &__section{
-        width: 80%;
+        width: 100%;
         &--name{
             display: flex;
             flex-direction: column;
@@ -325,8 +354,6 @@ a {
 
 }
 .comment{
-    padding-left: $padding-medium;
-    padding-right: $padding-medium;
     margin-bottom: 24px;
 
     &__section{
@@ -336,7 +363,7 @@ a {
     display: flex;
     gap: 2rem;
     // border-top: 1px solid $primary-color-2;
-    border-bottom: 2px solid $primary-color-2;
+    border-bottom: 1px solid $primary-color-2;
     height: 8rem;
     }
 
