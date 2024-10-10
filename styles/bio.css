@@ -1,12 +1,12 @@
 @font-face {
   font-family: "Avenir";
-  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("woff2");
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.o) format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir";
-  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("woff2");
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.o) format("woff2");
   font-weight: 600;
   font-style: normal;
 }
@@ -50,6 +50,7 @@ a {
 .navbar {
   width: 100%;
   background-color: #323232;
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -322,6 +323,36 @@ a {
     width: 31%;
     padding-bottom: 1.5rem;
   }
+}
+
+#comment-header {
+  padding: 1.5rem 1rem;
+}
+
+.comment {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 24px;
+}
+.comment__section {
+  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+  border-bottom: 2px solid #AFAFAF;
+  height: 8rem;
+}
+.comment__avatar--img {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  background-color: #AFAFAF;
+}
+.comment__info {
+  display: flex;
+  justify-content: space-between;
+}
+.comment__description {
+  padding-top: 10px;
 }
 
 .footer {
