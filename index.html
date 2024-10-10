@@ -82,6 +82,22 @@
     </section>
     <section>
         <h2 id="comment-header">Join the Conversation</h2>
+        <form class="new-comment">
+            <div class="new-comment__avatar">
+                <!-- <input type="file" id="avatar" name="avatar" accept="image/*" placeholder="avatar"> -->
+            </div>
+            <div class="new-comment__section">
+            <div class="new-comment__section--name">
+                <label for="name">Name</label>
+                <input id="name" type="text" name="name" placeholder="Enter your name">
+            </div>
+            <div class="new-comment__section--comment">
+                <label for="comment">Comment</label>
+                <input id="comment" type="text" name="comment" placeholder="Add a new comment">
+            </div>
+            <button type="submit" class="new-comment__submit">Submit</button>
+            </div>
+        </form>
         <div class="comment"></div>
     </section>
     <footer class="footer">

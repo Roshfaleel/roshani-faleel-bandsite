@@ -283,13 +283,56 @@ a {
 #comment-header{
     padding: $padding-regular $padding-medium;
 }
+
+.new-comment{
+   margin-left: 16px;
+    margin-right: 16px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid $primary-color-2;
+
+    &__avatar{
+       border-radius: 50%;
+                width: 48px;
+                height: 48px;
+                background-image: url(../assets/images/Mohan-muruge.jpg);
+                background-position: center;
+                background-size: cover;
+    }
+
+
+    &__section{
+        width: 80%;
+        &--name{
+            display: flex;
+            flex-direction: column;
+
+            #name{
+            height: 30px;
+            }
+        }
+        &--comment{
+           display: flex;
+            flex-direction: column;
+            padding-top: $padding-medium;
+
+            #comment{
+                height: 100px;
+            }
+        }
+    }
+
+
+}
 .comment{
     padding-left: $padding-medium;
     padding-right: $padding-medium;
     margin-bottom: 24px;
 
     &__section{
-    padding: $padding-medium;
+    // padding: $padding-medium;
+    padding-top: $padding-medium;
+    padding-bottom: $padding-medium;
     display: flex;
     gap: 2rem;
     // border-top: 1px solid $primary-color-2;

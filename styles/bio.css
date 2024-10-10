@@ -329,13 +329,48 @@ a {
   padding: 1.5rem 1rem;
 }
 
+.new-comment {
+  margin-left: 16px;
+  margin-right: 16px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #AFAFAF;
+}
+.new-comment__avatar {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  background-image: url(../assets/images/Mohan-muruge.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.new-comment__section {
+  width: 80%;
+}
+.new-comment__section--name {
+  display: flex;
+  flex-direction: column;
+}
+.new-comment__section--name #name {
+  height: 30px;
+}
+.new-comment__section--comment {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+.new-comment__section--comment #comment {
+  height: 100px;
+}
+
 .comment {
   padding-left: 1rem;
   padding-right: 1rem;
   margin-bottom: 24px;
 }
 .comment__section {
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   gap: 2rem;
   border-bottom: 2px solid #AFAFAF;
