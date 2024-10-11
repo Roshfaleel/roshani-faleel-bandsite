@@ -75,7 +75,7 @@ a {
             @include h3-font-mob;
             font-weight: 400;
 
-            @include tablet{
+            @include tablet {
                 @include h3-font-tab;
             }
         }
@@ -86,6 +86,67 @@ a {
             @include tablet {
                 @include h1-font-tab;
             }
+        }
+    }
+}
+.event-section {
+    padding-left: $padding-medium;
+    padding-right: $padding-medium;
+
+    h2 {
+        padding-top: 24px;
+        padding-bottom: 16px;
+    }
+
+    &__event {
+        display: flex;
+        flex-direction: column;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid $primary-color-2;
+
+    }
+
+    &__label {
+        font-size: $font-extra-small;
+        line-height: $line-height-small;
+        color: $primary-color-2;
+        font-weight: 600;
+        padding-top: 8px;
+
+        // @include tablet{
+
+        // }
+    }
+
+    &__date {
+        font-size: $font-regular;
+        line-height: $line-height-extra-small;
+        font-weight: 600;
+        padding-bottom: 8px;
+    }
+    &__venue,
+    &__location {
+        font-size: $font-regular;
+        line-height: $line-height-extra-small;
+        padding-bottom: 8px;
+    }
+
+    &__button {
+        margin-top: 16px;
+        background-color: $primary-color-1;
+        color: $primary-color-3;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        height: 40px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-family: "Avenir";
+        font-weight: bold;
+
+        &:hover {
+            background-color: $secondary-color-1;
         }
     }
 }

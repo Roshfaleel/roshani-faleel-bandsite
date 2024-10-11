@@ -115,4 +115,54 @@ a {
     line-height: 4.25rem;
     font-weight: 700;
   }
+}
+
+.event-section {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.event-section h2 {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+.event-section__event {
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #AFAFAF;
+}
+.event-section__label {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
+  font-weight: 600;
+  padding-top: 8px;
+}
+.event-section__date {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+.event-section__venue, .event-section__location {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  padding-bottom: 8px;
+}
+.event-section__button {
+  margin-top: 16px;
+  background-color: #323232;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  height: 40px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Avenir";
+  font-weight: bold;
+}
+.event-section__button:hover {
+  background-color: #000000;
 }/*# sourceMappingURL=shows.css.map */
