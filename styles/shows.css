@@ -121,9 +121,22 @@ a {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+@media screen and (min-width: 1080px) {
+  .event-section {
+    display: flex;
+    padding-left: 36px;
+    padding-right: 36px;
+    gap: 15rem;
+  }
+}
 .event-section h2 {
   padding-top: 24px;
   padding-bottom: 16px;
+}
+@media screen and (min-width: 1080px) {
+  .event-section__event-container {
+    width: 100%;
+  }
 }
 .event-section__event {
   display: flex;
@@ -131,6 +144,12 @@ a {
   padding-top: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid #AFAFAF;
+}
+@media screen and (min-width: 768px) {
+  .event-section__details {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+  }
 }
 .event-section__label {
   font-size: 0.625rem;
@@ -162,6 +181,7 @@ a {
   text-transform: uppercase;
   font-family: "Avenir";
   font-weight: bold;
+  width: 100%;
 }
 .event-section__button:hover {
   background-color: #000000;

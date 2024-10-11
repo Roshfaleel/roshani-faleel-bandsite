@@ -37,7 +37,7 @@ const events = [
   },
 ];
 
-const eventContainer = document.querySelector(".event-container");
+const eventContainer = document.querySelector(".event-section__event-container");
 
 function generateEvent(event) {
   //div to wrap the event
@@ -92,13 +92,16 @@ function generateEvent(event) {
 
   eventDetails.appendChild(locationDiv);
 
-  eventDiv.appendChild(eventDetails);
+
 
   const button = document.createElement("button");
   button.textContent = event.buttonLabel;
   button.classList.add("event-section__button");
   eventDiv.appendChild(button);
 
+      eventDetails.appendChild(button);
+
+    eventDiv.appendChild(eventDetails);
   //attaching the whole details to the main div
   eventContainer.appendChild(eventDiv);
 }
