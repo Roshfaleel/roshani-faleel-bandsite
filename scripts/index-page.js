@@ -84,26 +84,4 @@ comments.forEach((comment) => {
     comment.avatarUrl
   );
 });
-// console.log (defaultComment)
-// const commentSection = document.getElementById("comments-section");
 
-// defaultComment.forEach((commentObj) => {
-//   const commentDiv = document.createElement("div"); //making a div for each comment
-//   commentDiv.classList.add("comment"); // adding a class to the div
-
-//   const nameEli = document.createElement("h5"); // making element header for the name
-//   nameEli.textContent = commentObj.name;
-//   commentDiv.appendChild(nameEli); // attaching the h5 to div
-
-//   const dateEli = document.createElement("p");
-//   dateEli.textContent = commentObj.date;
-//   commentDiv.appendChild(dateEli);
-
-//   const descriptionEli = document.createElement("p");
-//   descriptionEli.classList.add("comment__details");
-//   descriptionEli.textContent = commentObj.comment;
-//   commentDiv.appendChild(descriptionEli);
-
-//   commentSection.appendChild(commentDiv);
-// });
-// console.log(commentSection);

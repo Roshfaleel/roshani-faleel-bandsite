@@ -38,21 +38,42 @@ const events = [
 ];
 
 const eventContainer = document.querySelector(".event-section__event-container");
+//header labels for tablet and the desktop
+const eventHeader = document.createElement("div");
+eventHeader.classList.add("event-section__header");
 
-function generateEvent(event) {
-  //div to wrap the event
+const dateHeader = document.createElement("p");
+dateHeader.textContent = "DATE";
+dateHeader.classList.add("event-section__header-label");
+eventHeader.appendChild(dateHeader);
+
+const venueHeader = document.createElement("p");
+venueHeader.textContent = "VENUE";
+venueHeader.classList.add("event-section__header-label");
+eventHeader.appendChild(venueHeader);
+
+const locationHeader = document.createElement("p");
+locationHeader.textContent = "LOCATION";
+locationHeader.classList.add("event-section__header-label");
+eventHeader.appendChild(locationHeader);
+
+eventContainer.appendChild(eventHeader);
+
+//looping the events
+events.forEach((event) => {
   const eventDiv = document.createElement("div");
   eventDiv.classList.add("event-section__event");
 
   const eventDetails = document.createElement("div");
   eventDetails.classList.add("event-section__details");
 
+  //DATE
   const dateDiv = document.createElement("div");
   dateDiv.classList.add("event-section__date-container");
 
   const dateLabel = document.createElement("p");
-  dateLabel.textContent = "DATE";
-  dateLabel.classList.add("event-section__label");
+  dateLabel.textContent = "DATE"; //this is for the mobile value
+  dateLabel.classList.add("event-section__label", "mobile-only");
   dateDiv.appendChild(dateLabel);
 
   const date = document.createElement("p");
@@ -62,12 +83,13 @@ function generateEvent(event) {
 
   eventDetails.appendChild(dateDiv);
 
+  //VENUE
   const venueDiv = document.createElement("div");
   venueDiv.classList.add("event-section__venue-container");
 
   const venueLabel = document.createElement("p");
-  venueLabel.textContent = "VENUE";
-  venueLabel.classList.add("event-section__label");
+  venueLabel.textContent = "VENUE"; //this is for the mobile value
+  venueLabel.classList.add("event-section__label", "mobile-only");
   venueDiv.appendChild(venueLabel);
 
   const venue = document.createElement("p");
@@ -77,12 +99,13 @@ function generateEvent(event) {
 
   eventDetails.appendChild(venueDiv);
 
+  //LOCATION
   const locationDiv = document.createElement("div");
-  locationDiv.classList.add("event__location-container");
+  locationDiv.classList.add("event-section__location-container");
 
   const locationLabel = document.createElement("p");
-  locationLabel.textContent = "LOCATION";
-  locationLabel.classList.add("event-section__label");
+  locationLabel.textContent = "LOCATION"; //this is for the mobile value
+  locationLabel.classList.add("event-section__label", "mobile-only");
   locationDiv.appendChild(locationLabel);
 
   const location = document.createElement("p");
@@ -92,18 +115,12 @@ function generateEvent(event) {
 
   eventDetails.appendChild(locationDiv);
 
-
-
   const button = document.createElement("button");
   button.textContent = event.buttonLabel;
   button.classList.add("event-section__button");
-  eventDiv.appendChild(button);
+  eventDetails.appendChild(button);
 
-      eventDetails.appendChild(button);
-
-    eventDiv.appendChild(eventDetails);
+  eventDiv.appendChild(eventDetails);
   //attaching the whole details to the main div
   eventContainer.appendChild(eventDiv);
-}
-
-events.forEach((event) => generateEvent(event));
+});

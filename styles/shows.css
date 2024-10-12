@@ -118,8 +118,12 @@ a {
 }
 
 .event-section {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 1rem;
+}
+@media screen and (min-width: 768px) {
+  .event-section {
+    padding: 0 2.25rem;
+  }
 }
 @media screen and (min-width: 1080px) {
   .event-section {
@@ -133,9 +137,40 @@ a {
   padding-top: 24px;
   padding-bottom: 16px;
 }
+@media screen and (min-width: 768px) {
+  .event-section h2 {
+    padding-top: 48px;
+    padding-bottom: 36px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+.event-section__header {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .event-section__header {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #AFAFAF;
+  }
+}
+.event-section__header-label {
+  color: #AFAFAF;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+.event-section__event-container {
+  padding-bottom: 1rem;
+}
 @media screen and (min-width: 1080px) {
   .event-section__event-container {
     width: 100%;
+    padding-top: 48px;
+    padding-bottom: 36px;
   }
 }
 .event-section__event {
@@ -149,6 +184,7 @@ a {
   .event-section__details {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr 2fr;
+    align-items: center;
   }
 }
 .event-section__label {
@@ -157,6 +193,12 @@ a {
   color: #AFAFAF;
   font-weight: 600;
   padding-top: 8px;
+}
+@media screen and (min-width: 768px) {
+  .event-section__label {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
 }
 .event-section__date {
   font-size: 0.8125rem;
@@ -169,11 +211,19 @@ a {
   line-height: 1.125rem;
   padding-bottom: 8px;
 }
+.event-section .mobile-only {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .event-section .mobile-only {
+    display: none;
+  }
+}
 .event-section__button {
   margin-top: 16px;
   background-color: #323232;
   color: #FFFFFF;
-  padding: 10px 20px;
+  padding: 10px 32px;
   border: none;
   border-radius: 4px;
   height: 40px;
@@ -185,4 +235,10 @@ a {
 }
 .event-section__button:hover {
   background-color: #000000;
+}
+@media screen and (min-width: 768px) {
+  .event-section__button {
+    margin-top: 0;
+    min-width: 150px;
+  }
 }/*# sourceMappingURL=shows.css.map */
