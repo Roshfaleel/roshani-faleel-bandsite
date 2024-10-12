@@ -109,7 +109,6 @@ a {
 
         @include tablet{
             padding-top: 48px;
-            padding-bottom: 36px;
             font-size: $font-large;
             line-height: $line-height-medium;
         }
@@ -151,6 +150,17 @@ a {
         padding-top: 16px;
         padding-bottom: 16px;
         border-bottom: 1px solid $primary-color-2;
+
+        &:hover{
+            background-color: $secondary-color-3;
+        }
+        &.selected{
+            background-color: $secondary-color-2;
+        }
+
+        @include tablet{
+            padding: 24px 18px;
+        }
     }
 
     &__details {

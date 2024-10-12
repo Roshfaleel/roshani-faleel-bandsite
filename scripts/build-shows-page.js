@@ -124,3 +124,17 @@ events.forEach((event) => {
   //attaching the whole details to the main div
   eventContainer.appendChild(eventDiv);
 });
+
+//highlighting the selected event
+
+const eventItems = document.querySelectorAll(".event-section__event");
+
+function handleClick(e) {
+    eventItems.forEach((item) => {
+        item.classList.remove("selected");
+    });
+    e.currentTarget.classList.add("selected");
+}
+eventItems.forEach((eventItems) => {
+    eventItems.addEventListener("click", handleClick);
+})

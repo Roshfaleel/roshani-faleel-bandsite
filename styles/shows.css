@@ -140,7 +140,6 @@ a {
 @media screen and (min-width: 768px) {
   .event-section h2 {
     padding-top: 48px;
-    padding-bottom: 36px;
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -179,6 +178,17 @@ a {
   padding-top: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid #AFAFAF;
+}
+.event-section__event:hover {
+  background-color: #FAFAFA;
+}
+.event-section__event.selected {
+  background-color: #E1E1E1;
+}
+@media screen and (min-width: 768px) {
+  .event-section__event {
+    padding: 24px 18px;
+  }
 }
 @media screen and (min-width: 768px) {
   .event-section__details {
