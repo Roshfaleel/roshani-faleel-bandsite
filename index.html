@@ -21,28 +21,28 @@
     </nav>
     <section class="hero">
         <div class="hero__overlay"></div>
-        <h1>The Bees Knees</h1>
+        <h1 class="hero__header">The Bees Knees</h1>
     </section>
     <section class="about">
-        <h2>About the Musicians</h2>
+        <h2 class="about__header">About the Musicians</h2>
         <article class="about__card">
-            <img src="./assets/images/band.jpg" alt="band-playing">
-            <p>
+            <img class="about__img" src="./assets/images/band.jpg" alt="band-playing">
+            <p class="about__content">
                 “We push each other to be the best. It’s not uncommon for one of us to say ‘this needs to be better,
                 back to the drawing
                 board’”
             </p>
-            <p id="team">
+            <p class="about__content about__content--auth">
                 - Lead vocalist of The Bees Knees
             </p>
         </article>
     </section>
     <section class="details">
-        <h3>
+        <h3 class="details__header">
             The Bees Knees
         </h3>
         <article class="details__description">
-            <p>
+            <p class="details__content">
                 The Bees Knees is a pop rock band originating from San Francisco, California. The band consists a
                 dynamic lineup
                 featuring two lead vocalists, two guitarists, a bassist, a keyboardist and a drummer. The band
@@ -53,7 +53,7 @@
                 more support,
                 pushing The Bees Knees to sign with a well known record label.
             </p>
-            <p>
+            <p class="details__content">
                 From there, the band has soared, gaining international recognition and ranking in the top 10 on the
                 Poster Charts. New
                 fans immediately fell in love with the band’s original and organic attitude, solidifying their place
@@ -67,17 +67,26 @@
         </article>
     </section>
     <section class="gallery">
-        <h2>Photo Gallery</h2>
+        <h2 class="gallery__header">Photo Gallery</h2>
         <div class="gallery__images">
-            <img src="./assets/images/Photo-gallery-1.jpg" alt="audience is enjoying the band performance in a pinkish foggy background" />
-            <img src="./assets/images/Photo-gallery-2.jpg" alt="a woman is dancing with raised hands in the middle of the crowd" />
-            <img src="./assets/images/Photo-gallery-3.jpg" alt="the crowd enjoying the live show with raised hands" />
-            <img src="./assets/images/Photo-gallery-4.jpg" alt="a backview of a women dancing with raised hands facing the stage" />
-            <img src="./assets/images/Photo-gallery-5.jpg" alt="the crowd enjoing the concert with confetti and smoke filling background" />
-            <img src="./assets/images/Photo-gallery-6.jpg" alt="a singer performing on the stage with one arm raised in the air" />
-            <img src="./assets/images/Photo-gallery-7.jpg" alt="the concert stage view with lights and confetti over the crowd" />
-            <img src="./assets/images/Photo-gallery-8.jpg" alt="a close-up of Dj hands and panel during the performance" />
-            <img src="./assets/images/Photo-gallery-9.jpg" alt="the crowd with confetti falling during the event" />
+            <img class="gallery__img" src="./assets/images/Photo-gallery-1.jpg"
+                alt="audience is enjoying the band performance in a pinkish foggy background" />
+            <img class="gallery__img" src="./assets/images/Photo-gallery-2.jpg"
+                alt="a woman is dancing with raised hands in the middle of the crowd" />
+            <img class="gallery__img" src="./assets/images/Photo-gallery-3.jpg"
+                alt="the crowd enjoying the live show with raised hands" />
+            <img class="gallery__img" src="./assets/images/Photo-gallery-4.jpg"
+                alt="a backview of a women dancing with raised hands facing the stage" />
+            <img class="gallery__img" src="./assets/images/Photo-gallery-5.jpg"
+                alt="the crowd enjoing the concert with confetti and smoke filling background" />
+            <img class="gallery__img" src="./assets/images/Photo-gallery-6.jpg"
+                alt="a singer performing on the stage with one arm raised in the air" />
+            <img class="gallery__img" src="./assets/images/Photo-gallery-7.jpg"
+                alt="the concert stage view with lights and confetti over the crowd" />
+            <img class="gallery__img" src="./assets/images/Photo-gallery-8.jpg"
+                alt="a close-up of Dj hands and panel during the performance" />
+            <img class="gallery__img" src="./assets/images/Photo-gallery-9.jpg"
+                alt="the crowd with confetti falling during the event" />
         </div>
     </section>
     <section class="comments">
@@ -86,50 +95,54 @@
             <div class="comments__new-form">
                 <div class="comments__avatar"></div>
                 <form class="comments__new-comment" autocomplete="on" id="comment-form">
-                        <label for="name" class="comments__label">NAME</label>
-                        <input id="name" type="text" name="name" class="comments__name-input"
-                            placeholder="Enter your name">
-                        <label for="comment" class="comments__label">COMMENT</label>
-                        <textarea id="comment" name="comment" class="comments__comment-input"
-                            placeholder="Add a new comment" rows="6"></textarea>
-                        <div class="comments__submit">
-                            <button type="submit" class="comments__submit--button">COMMENT</button>
-                        </div>
+                    <label for="name" class="comments__label">NAME</label>
+                    <input id="name" type="text" name="name" class="comments__name-input" placeholder="Enter your name">
+                    <label for="comment" class="comments__label">COMMENT</label>
+                    <textarea id="comment" name="comment" class="comments__comment-input"
+                        placeholder="Add a new comment" rows="6"></textarea>
+                    <div class="comments__submit">
+                        <button type="submit" class="comments__submit--button">COMMENT</button>
+                    </div>
                 </form>
             </div>
             <div class="comment-list"></div>
     </section>
     <footer class="footer">
         <section class="footer__intro">
-            <h2>Get in Touch </h2>
+            <h2 class="footer__header">Get in Touch </h2>
             <div class="footer__intro footer__intro--icons">
-                <a href="https://instagram.com"><img src="./assets/icons/SVG/Icon-instagram.svg" alt="instagram-logo" /></a>
-                <a href="https://facebook.com"><img src="./assets/icons/SVG/Icon-facebook.svg" alt="facebook-logo" /></a>
+                <a href="https://instagram.com"><img src="./assets/icons/SVG/Icon-instagram.svg"
+                        alt="instagram-logo" /></a>
+                <a href="https://facebook.com"><img src="./assets/icons/SVG/Icon-facebook.svg"
+                        alt="facebook-logo" /></a>
                 <a href="https://twitter.com"><img src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter-logo" /></a>
             </div>
         </section>
         <div class="footer__contact">
             <section>
-                <h4>The Bees Knees Management</h4>
-                <p>503 Broadway Penthouse,<br>
+                <h4 class="footer__subheader">The Bees Knees Management</h4>
+                <p class="footer__details">503 Broadway Penthouse,<br>
                     New York, NY 10012, USA</p>
-                <p><a href="mailto:info@thebeesknees.com">info@thebeesknees.com</a></p>
+                <p class="footer__details"><a class="footer__details footer__details--link"
+                        href="mailto:info@thebeesknees.com">info@thebeesknees.com</a></p>
             </section>
             <section>
-                <h4>Limitless Artist Group</h4>
-                <p>Booking Agent for<br>
+                <h4 class="footer__subheader">Limitless Artist Group</h4>
+                <p class="footer__details">Booking Agent for<br>
                     US / South America / Japan</p>
-                <p><a href="mailto:bookings@limitlessag.com">bookings@limitlessag.com</a></p>
+                <p class="footer__details"><a class="footer__details footer__details--link"
+                        href="mailto:bookings@limitlessag.com">bookings@limitlessag.com</a></p>
             </section>
             <section>
-                <h4>ARCH Entertainment</h4>
-                <p>Booking Agent for <br>
+                <h4 class="footer__subheader">ARCH Entertainment</h4>
+                <p class="footer__details">Booking Agent for <br>
                     UK / EU / AU</p>
-                <p><a href="mailto:bookings@archentertainment.com">bookings@archentertainment.com</a></p>
+                <p class="footer__details"><a class="footer__details footer__details--link"
+                        href="mailto:bookings@archentertainment.com">bookings@archentertainment.com</a></p>
             </section>
         </div>
         <div class="footer__logo">
-            <img src="./assets/logos/Logo-bandsite.svg" alt="bandsite-logo" />
+            <img class="footer__img" src="./assets/logos/Logo-bandsite.svg" alt="bandsite-logo" />
         </div>
         <div class="footer__copywrite">
             <p>Copyright The Bees Knees © 2023 All Rights Reserved</p>

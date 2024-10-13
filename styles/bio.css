@@ -130,7 +130,7 @@ body {
   background-color: #323232;
   opacity: 0.5;
 }
-.hero h1 {
+.hero__header {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -140,7 +140,7 @@ body {
   top: 40%;
 }
 @media screen and (min-width: 768px) {
-  .hero h1 {
+  .hero__header {
     padding-left: 2.25rem;
     font-size: 3.75rem;
     line-height: 4.25rem;
@@ -158,14 +158,14 @@ body {
     padding: 3rem 2.25rem;
   }
 }
-.about h2 {
+.about__header {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
   padding-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .about h2 {
+  .about__header {
     padding-bottom: 2.25rem;
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -174,6 +174,7 @@ body {
 }
 .about__card {
   width: 100%;
+  padding: 0;
 }
 @media screen and (min-width: 768px) {
   .about__card {
@@ -185,10 +186,7 @@ body {
     padding: 0 3.5rem;
   }
 }
-.about__card img {
-  width: 100%;
-}
-.about__card p {
+.about__content {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
@@ -197,13 +195,13 @@ body {
   text-shadow: 0;
   transition: transform 0.3s ease;
 }
-.about__card p:hover {
+.about__content:hover {
   text-shadow: 1.25rem 1.25rem 0.625rem rgb(210, 208, 208);
   transform: translateY(-5px);
   z-index: 1;
 }
 @media screen and (min-width: 768px) {
-  .about__card p {
+  .about__content {
     padding-top: 2.25rem;
     font-size: 1.5rem;
     line-height: 2rem;
@@ -211,12 +209,15 @@ body {
   }
 }
 @media screen and (min-width: 1080px) {
-  .about__card p {
+  .about__content {
     width: 80%;
   }
 }
+.about__img {
+  width: 100%;
+}
 @media screen and (min-width: 768px) {
-  .about #team {
+  .about__content--auth {
     padding-top: 0.5rem;
     font-size: 0.875rem;
   }
@@ -235,14 +236,14 @@ body {
     padding: 0 5.75rem 2.25rem 5.75rem;
   }
 }
-.details h3 {
+.details__header {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
   color: #000000;
 }
 @media screen and (min-width: 768px) {
-  .details h3 {
+  .details__header {
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 600;
@@ -258,13 +259,13 @@ body {
     gap: 1.5rem;
   }
 }
-.details__description p {
+.details__content {
   padding-top: 1rem;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
 @media screen and (min-width: 768px) {
-  .details__description p {
+  .details__content {
     padding-top: 2.25rem;
     font-size: 0.875rem;
     line-height: 1.375rem;
@@ -280,14 +281,14 @@ body {
     padding: 3rem 0;
   }
 }
-.gallery h2 {
+.gallery__header {
   padding-bottom: 1rem;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
 }
 @media screen and (min-width: 768px) {
-  .gallery h2 {
+  .gallery__header {
     padding: 0 2.25rem 2.25rem;
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -308,18 +309,18 @@ body {
     justify-content: space-between;
   }
 }
-.gallery__images img {
+.gallery__img {
   padding-bottom: 1rem;
   filter: grayscale(100%);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
-.gallery__images img:hover {
+.gallery__img:hover {
   filter: grayscale(0%);
   transform: translateY(-5px);
   z-index: 1;
 }
 @media screen and (min-width: 768px) {
-  .gallery__images img {
+  .gallery__img {
     width: 31%;
     padding-bottom: 1.5rem;
   }
@@ -358,7 +359,7 @@ body {
   border-radius: 50%;
   width: 2.25rem;
   height: 2.25rem;
-  background-color: #D22D2D;
+  background-color: #d22d2d;
   background-image: url(../assets/images/Mohan-muruge.jpg);
   background-position: center;
   background-size: cover;
@@ -530,7 +531,7 @@ body {
   }
 }
 .comments__input--error {
-  border: 0.0625rem solid #D22D2D;
+  border: 0.0625rem solid #d22d2d;
 }
 
 .comment-list {
@@ -606,24 +607,6 @@ body {
     justify-content: flex-start;
   }
 }
-.footer__intro h2 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-}
-@media screen and (min-width: 768px) {
-  .footer__intro h2 {
-    font-size: 2.25rem;
-    line-height: 2.75rem;
-    font-weight: 700;
-    width: 15.25rem;
-  }
-}
-@media screen and (min-width: 1080px) {
-  .footer__intro h2 {
-    width: 20.25rem;
-  }
-}
 .footer__intro--icons {
   display: flex;
   justify-content: space-between;
@@ -644,6 +627,24 @@ body {
     height: 1.5625rem;
   }
 }
+.footer__header {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .footer__header {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    width: 15.25rem;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .footer__header {
+    width: 20.25rem;
+  }
+}
 .footer__contact {
   display: flex;
   flex-direction: column;
@@ -660,31 +661,31 @@ body {
     width: 70%;
   }
 }
-.footer__contact h4 {
+.footer__subheader {
   padding-top: 1.5rem;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 600;
 }
 @media screen and (min-width: 768px) {
-  .footer__contact h4 {
+  .footer__subheader {
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 600;
   }
 }
-.footer__contact p {
+.footer__details {
   padding-top: 1rem;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
 @media screen and (min-width: 768px) {
-  .footer__contact p {
+  .footer__details {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
 }
-.footer__contact p a {
+.footer__details--link {
   color: #FFFFFF;
 }
 .footer__logo {
@@ -700,16 +701,16 @@ body {
     right: 2.1875rem;
   }
 }
-.footer__logo img {
+.footer__img {
   height: 1.25rem;
   width: 7.5rem;
 }
-.footer__copywrite p {
+.footer__copywrite {
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
 @media screen and (min-width: 768px) {
-  .footer__copywrite p {
+  .footer__copywrite {
     padding-top: 3rem;
     font-size: 0.875rem;
     line-height: 1.25rem;

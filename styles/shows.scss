@@ -56,44 +56,43 @@ body {
             padding: 0 $padding-large;
             width: 100%;
         }
-        @include desktop{
+        @include desktop {
             flex-direction: row;
-            top:35%;
+            top: 35%;
         }
     }
 
     &__header {
         width: 35%;
 
-        @include tablet{
+        @include tablet {
             width: 80%;
         }
 
-        @include desktop{
+        @include desktop {
             width: 50%;
         }
+    }
+    &__subheader {
+        @include h3-font-mob;
+        font-weight: 400;
 
-        h3 {
-            @include h3-font-mob;
-            font-weight: 400;
-
-            @include tablet {
-                @include h3-font-tab;
-            }
+        @include tablet {
+            @include h3-font-tab;
         }
-        h1 {
-            margin-top: 1rem;
-            @include h1-font-mob;
-            color: $primary-color-3;
+    }
+    &__mainheader {
+        margin-top: 1rem;
+        @include h1-font-mob;
+        color: $primary-color-3;
 
-            @include tablet {
-                @include h1-font-tab;
-            }
+        @include tablet {
+            @include h1-font-tab;
         }
     }
 
-    &__song{
-        @include desktop{
+    &__song {
+        @include desktop {
             width: 50%;
         }
     }
@@ -111,7 +110,7 @@ body {
         gap: 15rem;
     }
 
-    h2 {
+    &__main-header {
         padding-top: $padding-regular;
         padding-bottom: $padding-medium;
         @include h1-font-mob;
@@ -193,7 +192,7 @@ body {
         font-weight: 600;
         padding-bottom: 8px;
 
-        @include tablet{
+        @include tablet {
             @include p-font-tab;
         }
     }
@@ -202,7 +201,7 @@ body {
         @include p-font-mob;
         padding-bottom: 8px;
 
-        @include tablet{
+        @include tablet {
             @include p-font-tab;
         }
     }
@@ -236,6 +235,123 @@ body {
         @include tablet {
             margin-top: 0;
             min-width: 9.375rem;
+        }
+    }
+}
+.footer {
+    background-color: $primary-color-1;
+    color: $primary-color-3;
+    padding: $padding-regular $padding-medium;
+    position: relative;
+
+    @include tablet {
+        padding: $padding-extra-large $padding-large;
+    }
+    &__intro {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include desktop {
+            width: 40%;
+            justify-content: flex-start;
+        }
+
+        &--icons {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 7.5rem;
+            padding-top: $padding-medium;
+
+            @include tablet {
+                width: 40%;
+                width: 6.25rem;
+                padding: 0;
+            }
+            img {
+                @include tablet {
+                    width: 1.5625rem;
+                    height: 1.5625rem;
+                }
+            }
+        }
+    }
+
+    &__header {
+        @include h1-font-mob;
+
+        @include tablet {
+            @include h2-font-tab;
+            width: 15.25rem;
+        }
+        @include desktop {
+            width: 20.25rem;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        @include desktop {
+            width: 70%;
+        }
+    }
+    &__subheader {
+        padding-top: $padding-regular;
+        @include footer-p-mob;
+        font-weight: 600;
+
+        @include tablet {
+            @include footer-p-tab;
+            font-weight: 600;
+        }
+    }
+    &__details {
+        padding-top: $padding-medium;
+        @include footer-p-mob;
+
+        @include tablet {
+            @include footer-p-tab;
+        }
+    }
+    &__details--link {
+        color: $primary-color-3;
+    }
+
+    &__logo {
+        padding-top: 2rem;
+        padding-bottom: $padding-regular;
+        width: fit-content;
+
+        @include tablet {
+            position: absolute;
+            top: 1.3125rem;
+            right: 2.1875rem;
+        }
+    }
+
+    &__img {
+        @include logo;
+    }
+    &__copywrite {
+        @include footer-p-mob;
+
+        @include tablet {
+            padding-top: $padding-extra-large;
+            @include footer-p-tab;
         }
     }
 }
