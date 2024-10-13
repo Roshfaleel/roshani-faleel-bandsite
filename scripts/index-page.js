@@ -3,36 +3,55 @@
 const comments = [
   {
     name: "Victor Pinto",
-    date: "11/02/2023",
+    timestamp: new Date(2023, 10, 2, 14, 30).getTime(),
     textComment:
       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
     avatarUrl: "",
   },
   {
     name: "Christina Cabrer",
-    date: "10/28/2023",
+    timestamp: new Date(2023, 9, 28, 16, 45).getTime(),
     textComment:
       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day",
     avatarUrl: "",
   },
   {
     name: "Isaac Tadesse",
-    date: "10/20/2023",
+    timestamp: new Date(2023, 9, 20, 18, 15).getTime(),
     textComment:
       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
     avatarUrl: "",
   },
 ];
 
-function createComment(name, date, textComment, avatarUrl) {
+//timestamp
+function timeAgo(timestamp) {
+    const now = Date.now();
+    const secondsAgo = Math.floor((now - timestamp) / 1000);
+
+    if (secondsAgo < 60) {
+      return "just now";
+    } else if (secondsAgo < 3600) {
+      const minutes = Math.floor(secondsAgo / 60);
+      return `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
+    } else if (secondsAgo < 86400) {
+      const hours = Math.floor(secondsAgo / 3600);
+      return `${hours} hour${hours > 1 ? "s" : ""} ago`;
+    } else {
+      const days = Math.floor(secondsAgo / 86400);
+      return `${days} day${days > 1 ? "s" : ""} ago`;
+    }
+}
+
+function createComment(name, timestamp, textComment, avatarUrl) {
   const commentSectionDiv = document.createElement("div");
-  commentSectionDiv.className = "comment__section";
+  commentSectionDiv.className = "comment-list__section";
 
   const avatarDiv = document.createElement("div");
-  avatarDiv.className = "comment__avatar";
+  avatarDiv.className = "comment-list__avatar";
 
   const avatarImg = document.createElement("img");
-  avatarImg.className = "comment__avatar--img";
+  avatarImg.className = "comment-list__avatar--img";
   avatarImg.src = avatarUrl || " ";
 
   if (!avatarUrl) {
@@ -42,47 +61,76 @@ function createComment(name, date, textComment, avatarUrl) {
   avatarDiv.appendChild(avatarImg);
 
   const commentDetailsDiv = document.createElement("div");
-  commentDetailsDiv.className = "comment__details";
+  commentDetailsDiv.className = "comment-list__details";
 
-   const commentInfoDiv = document.createElement("div");
-   commentInfoDiv.className = "comment__info";
+  const commentInfoDiv = document.createElement("div");
+  commentInfoDiv.className = "comment-list__info";
 
   const nameEli = document.createElement("p");
-  nameEli.className = "comment__info--name";
+  nameEli.className = "comment-list__info--name";
   nameEli.textContent = name;
 
   const dateEli = document.createElement("p");
-  dateEli.className = "comment__info--date";
-  dateEli.textContent = date;
+  dateEli.className = "comment-list__info--date";
+  dateEli.textContent = timeAgo(timestamp);
 
   const commentDescriptionDiv = document.createElement("div");
-  commentDescriptionDiv.className = "comment__description";
+  commentDescriptionDiv.className = "comment-list__description";
 
   const textCommentEli = document.createElement("p");
-  textCommentEli.className = "comment__details--text";
+  textCommentEli.className = "comment-list__details--text";
   textCommentEli.textContent = textComment;
 
   commentInfoDiv.appendChild(nameEli);
   commentInfoDiv.appendChild(dateEli);
   commentDescriptionDiv.appendChild(textCommentEli);
 
-    commentSectionDiv.appendChild(avatarDiv);
-    commentDetailsDiv.appendChild(commentInfoDiv);
+  commentSectionDiv.appendChild(avatarDiv);
+  commentDetailsDiv.appendChild(commentInfoDiv);
   commentDetailsDiv.appendChild(commentDescriptionDiv);
   commentSectionDiv.appendChild(commentDetailsDiv);
 
-  document.querySelector(".comment").appendChild(commentSectionDiv);
+  document.querySelector(".comment-list").appendChild(commentSectionDiv);
 
   console.log(commentSectionDiv);
 }
 
-comments.forEach((comment) => {
-  createComment(
-    comment.name,
-    comment.date,
-    comment.textComment,
-    comment.avatarUrl
-  );
-});
+function renderComments() {
+  const commentList = document.querySelector(".comment-list");
+  commentList.innerHTML = "";
+  comments.forEach((comment) => {
+    createComment(
+      comment.name,
+      comment.timestamp,
+      comment.textComment,
+      comment.avatarUrl
+    );
+  });
+}
 
-let commentArray = [];
+renderComments();
+
+document
+  .getElementById("comment-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const nameInput = document.getElementById("name");
+    const commentInput = document.getElementById("comment");
+    const currentTimestamp = Date.now();
+
+    const newComment = {
+      name: nameInput.value,
+      timestamp: currentTimestamp,
+      textComment: commentInput.value,
+      avatarUrl: "",
+    };
+
+    comments.unshift(newComment);
+
+    //clearing the form feild
+    nameInput.value = "";
+    commentInput.value = "";
+
+    renderComments();
+  });

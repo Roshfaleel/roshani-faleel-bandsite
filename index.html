@@ -85,19 +85,19 @@
         <div class="comments__content">
             <div class="comments__new-form">
                 <div class="comments__avatar"></div>
-                <form class="comments__new-comment" autocomplete="on">
-                    <div class="comments__new-comment">
+                <form class="comments__new-comment" autocomplete="on" id="comment-form">
                         <label for="name" class="comments__label">NAME</label>
-                        <input id="name" type="text" name="name" class="comments__name-input" placeholder="Enter your name">
-                <label for="comment" class="comments__label">COMMENT</label>
-                <textarea id="comment" name="comment" class="comments__comment-input" placeholder="Add a new comment" rows="6" ></textarea>
-            <button type="submit" class="comments__submit">COMMENT</button>
+                        <input id="name" type="text" name="name" class="comments__name-input"
+                            placeholder="Enter your name">
+                        <label for="comment" class="comments__label">COMMENT</label>
+                        <textarea id="comment" name="comment" class="comments__comment-input"
+                            placeholder="Add a new comment" rows="6"></textarea>
+                        <div class="comments__submit">
+                            <button type="submit" class="comments__submit--button">COMMENT</button>
+                        </div>
+                </form>
             </div>
-        </form>
-        </div>
-
-        <div class="comment"></div>
-
+            <div class="comment-list"></div>
     </section>
     <footer class="footer">
         <section class="footer__intro">

@@ -333,9 +333,9 @@ a {
 }
 @media screen and (min-width: 768px) {
   .comments #comment-header {
-    padding-left: 0;
+    padding-left: 36px;
     padding-bottom: 36px;
-    padding-top: 0;
+    padding-top: 48px;
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
@@ -346,8 +346,17 @@ a {
 }
 @media screen and (min-width: 768px) {
   .comments__content {
-    padding: 3rem 2.25rem;
+    padding-top: 0;
+    padding-left: 84px;
+    padding-right: 84px;
+    padding-bottom: 48px;
     margin: 0;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .comments__content {
+    width: 70%;
+    margin: auto;
   }
 }
 .comments__avatar {
@@ -366,18 +375,18 @@ a {
   padding-bottom: 1rem;
   border-bottom: 1px solid #AFAFAF;
 }
+@media screen and (min-width: 1080px) {
+  .comments__new-form {
+    width: 100%;
+    padding: 0;
+    margin: auto;
+  }
+}
 .comments__new-comment {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-content: center;
-}
-@media screen and (min-width: 1080px) {
-  .comments__new-comment {
-    padding: 0 5.75rem 2.25rem 5.75rem;
-    width: 70%;
-    margin: auto;
-  }
 }
 .comments__label {
   font-size: 0.75rem;
@@ -419,6 +428,16 @@ a {
   font-size: 0.8125rem;
   font-family: "Avenir";
 }
+@media screen and (min-width: 768px) {
+  .comments__name-input::-moz-placeholder {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+  .comments__name-input::placeholder {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+}
 .comments__comment-input {
   padding: 12px;
   border-radius: 4px;
@@ -427,6 +446,7 @@ a {
   outline: none;
   resize: vertical;
   transition: border-color 0.3s ease;
+  color: #000000;
 }
 .comments__comment-input:focus {
   border-color: #323232;
@@ -443,7 +463,30 @@ a {
   font-size: 0.8125rem;
   font-family: "Avenir";
 }
-.comments__submit {
+@media screen and (min-width: 768px) {
+  .comments__comment-input::-moz-placeholder {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-family: "Avenir";
+  }
+  .comments__comment-input::placeholder {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-family: "Avenir";
+  }
+}
+@media screen and (min-width: 768px) {
+  .comments__comment-input {
+    margin-bottom: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .comments__submit {
+    display: flex;
+    justify-content: end;
+  }
+}
+.comments__submit--button {
   margin-top: 16px;
   background-color: #323232;
   color: #FFFFFF;
@@ -457,55 +500,61 @@ a {
   font-weight: 600;
   width: 100%;
 }
-.comments__submit:hover {
+.comments__submit--button:hover {
   background-color: #000000;
 }
 @media screen and (min-width: 768px) {
-  .comments__submit {
+  .comments__submit--button {
     margin-top: 0;
-    min-width: 150px;
+    width: 150px;
+    align-items: end;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .comments__submit--button {
+    margin-bottom: 24px;
   }
 }
 
-.comment {
+.comment-list {
   margin-bottom: 24px;
 }
-.comment__section {
+.comment-list__section {
   padding-top: 1rem;
   padding-bottom: 1rem;
   display: flex;
   gap: 2rem;
-  border-bottom: 1px solid #AFAFAF;
+  border-bottom: 1px solid #E1E1E1;
   height: 8rem;
 }
-.comment__avatar--img {
+.comment-list__avatar--img {
   border-radius: 50%;
   width: 48px;
   height: 48px;
-  background-color: #AFAFAF;
+  background-color: #E1E1E1;
 }
-.comment__details {
+.comment-list__details {
+  width: 100%;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
 @media screen and (min-width: 768px) {
-  .comment__details {
-    padding-top: 2.25rem;
+  .comment-list__details {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
 }
-.comment__info {
+.comment-list__info {
   display: flex;
   justify-content: space-between;
 }
-.comment__info--name {
+.comment-list__info--name {
   font-weight: 600;
 }
-.comment__info--date {
+.comment-list__info--date {
   color: #AFAFAF;
 }
-.comment__description {
+.comment-list__description {
   padding-top: 10px;
 }
 
