@@ -70,6 +70,19 @@
   line-height: $line-height-extra-small;
 }
 
+//label and button -mobile
+@mixin label-mob{
+font-size: $font-extra-small;
+line-height: $line-height-small;
+font-weight: 600;
+}
+//label and button - tab/desktop
+@mixin label-tab{
+  font-size: $font-small;
+  line-height: $line-height-small;
+  font-weight: 600;
+}
+
 //p-desktop and tablet
 @mixin footer-p-tab {
   font-size: $font-medium;

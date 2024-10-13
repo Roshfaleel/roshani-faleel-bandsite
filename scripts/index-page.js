@@ -42,7 +42,7 @@ function timeAgo(timestamp) {
       return `${days} day${days > 1 ? "s" : ""} ago`;
     }
 }
-
+//comments
 function createComment(name, timestamp, textComment, avatarUrl) {
   const commentSectionDiv = document.createElement("div");
   commentSectionDiv.className = "comment-list__section";
@@ -109,7 +109,7 @@ function renderComments() {
 }
 
 renderComments();
-
+//new comment with form validation
 document
   .getElementById("comment-form")
   .addEventListener("submit", function (event) {
@@ -151,7 +151,7 @@ document
     }
   });
 //setting error state
-function setErrorState(inputElement, errorMessage) {
+function setErrorState(inputElement) {
   inputElement.classList.add("comments__input--error");
 }
 
