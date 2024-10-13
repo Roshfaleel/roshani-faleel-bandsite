@@ -80,27 +80,24 @@
             <img src="./assets/images/Photo-gallery-9.jpg" alt="img9" />
         </div>
     </section>
-    <section id="comment-section">
+    <section class="comments">
         <h2 id="comment-header">Join the Conversation</h2>
-        <div id="comment-area">
-        <form class="new-comment" autocomplete="on">
-            <div class="new-comment__avatar">
-                <!-- <input type="file" id="avatar" name="avatar" accept="image/*" placeholder="avatar"> -->
-            </div>
-            <div class="new-comment__section">
-            <div class="new-comment__section--name">
-                <label for="name">Name</label>
-                <input id="name" type="text" name="name" placeholder="Enter your name">
-            </div>
-            <div class="new-comment__section--comment">
-                <label for="comment">Comment</label>
-                <input id="comment" type="text" name="comment" placeholder="Add a new comment">
-            </div>
-            <button type="submit" class="new-comment__submit">Submit</button>
+        <div class="comments__content">
+            <div class="comments__new-form">
+                <div class="comments__avatar"></div>
+                <form class="comments__new-comment" autocomplete="on">
+                    <div class="comments__new-comment">
+                        <label for="name" class="comments__label">NAME</label>
+                        <input id="name" type="text" name="name" class="comments__name-input" placeholder="Enter your name">
+                <label for="comment" class="comments__label">COMMENT</label>
+                <textarea id="comment" name="comment" class="comments__comment-input" placeholder="Add a new comment" rows="6" ></textarea>
+            <button type="submit" class="comments__submit">COMMENT</button>
             </div>
         </form>
-        <div class="comment"></div>
         </div>
+
+        <div class="comment"></div>
+
     </section>
     <footer class="footer">
         <section class="footer__intro">

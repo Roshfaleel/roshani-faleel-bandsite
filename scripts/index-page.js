@@ -48,18 +48,18 @@ function createComment(name, date, textComment, avatarUrl) {
    commentInfoDiv.className = "comment__info";
 
   const nameEli = document.createElement("p");
-  nameEli.className = "comments__info--name";
+  nameEli.className = "comment__info--name";
   nameEli.textContent = name;
 
   const dateEli = document.createElement("p");
-  dateEli.className = "comments__info--date";
+  dateEli.className = "comment__info--date";
   dateEli.textContent = date;
 
   const commentDescriptionDiv = document.createElement("div");
   commentDescriptionDiv.className = "comment__description";
 
   const textCommentEli = document.createElement("p");
-  textCommentEli.className = "comments__details--text";
+  textCommentEli.className = "comment__details--text";
   textCommentEli.textContent = textComment;
 
   commentInfoDiv.appendChild(nameEli);
@@ -85,3 +85,4 @@ comments.forEach((comment) => {
   );
 });
 
+let commentArray = [];
