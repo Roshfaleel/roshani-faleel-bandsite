@@ -119,18 +119,43 @@ document
     const commentInput = document.getElementById("comment");
     const currentTimestamp = Date.now();
 
-    const newComment = {
-      name: nameInput.value,
-      timestamp: currentTimestamp,
-      textComment: commentInput.value,
-      avatarUrl: "",
-    };
+    clearErrorState(nameInput);
+    clearErrorState(commentInput);
 
-    comments.unshift(newComment);
+    let isValid = true;
 
-    //clearing the form feild
-    nameInput.value = "";
-    commentInput.value = "";
+    if (nameInput.value.trim() === "") {
+      setErrorState(nameInput, "Name cannot be empty");
+      isValid = false;
+    }
+    if (commentInput.value.trim() === "") {
+      setErrorState(commentInput, "Comment cannot be empty");
+      isValid = false;
+    }
 
-    renderComments();
+    if (isValid) {
+      const newComment = {
+        name: nameInput.value,
+        timestamp: currentTimestamp,
+        textComment: commentInput.value,
+        avatarUrl: "",
+      };
+
+      comments.unshift(newComment);
+
+      //clearing the form feild
+      nameInput.value = "";
+      commentInput.value = "";
+
+      renderComments();
+    }
   });
+//setting error state
+function setErrorState(inputElement, errorMessage) {
+  inputElement.classList.add("comments__input--error");
+}
+
+//clear error state
+function clearErrorState(inputElement) {
+  inputElement.classList.remove("comments__input--error");
+}

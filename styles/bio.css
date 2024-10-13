@@ -515,6 +515,9 @@ a {
     margin-bottom: 24px;
   }
 }
+.comments__input--error {
+  border: 1px solid #D22D2D;
+}
 
 .comment-list {
   margin-bottom: 24px;
