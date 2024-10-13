@@ -358,6 +358,7 @@ body {
   border-radius: 50%;
   width: 2.25rem;
   height: 2.25rem;
+  background-color: #D22D2D;
   background-image: url(../assets/images/Mohan-muruge.jpg);
   background-position: center;
   background-size: cover;
@@ -372,7 +373,7 @@ body {
 .comments__new-form {
   display: flex;
   width: 100%;
-  gap: 2rem;
+  gap: 2.5rem;
   padding-bottom: 1rem;
   border-bottom: 0.0625rem solid #E1E1E1;
 }
@@ -384,10 +385,11 @@ body {
   }
 }
 .comments__new-comment {
-  width: 100%;
+  width: 60%;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  justify-content: end;
+  flex-grow: 1;
 }
 .comments__label {
   font-size: 0.625rem;
