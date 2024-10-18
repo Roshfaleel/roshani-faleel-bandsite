@@ -9,14 +9,18 @@ class BandsiteApi {
 
   async postComment(comment) {
     try {
-      const response = await axios.post(`${this.baseUrl}/comments`, comment, {
+      const url = `${this.baseUrl}/comments?api_key=${this.apiKey}`;
+      const response = await axios.post(url, comment, {
         headers: {
-          Authorization: `Bearer ${this.apiKey}`,
           "Content-Type": "application/json",
         },
       });
+      return response.date;
     } catch (error) {
-      console.error("Error posting comment : ", error);
+      console.error(
+        "Error posting comment : ",
+        error.response?.data || error.message
+      );
       throw error;
     }
   }
@@ -25,13 +29,11 @@ class BandsiteApi {
 
   async getComments() {
     try {
-      const response = await axios.get(`${this.baseUrl}/comments`, {
-        headers: {
-          Authorization: `Bearer ${this.apiKey}`,
-        },
-      });
+      const url = `${this.baseUrl}/comments?api_key=${this.apiKey}`;
+      const response = await axios.get(url);
       const comments = response.data;
-      return comments.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      return comments.sort((a, b) => b.timestamp - a.timestamp);
     } catch (error) {
       console.error("Error fetching comments : ", error);
       throw error;
@@ -42,20 +44,12 @@ class BandsiteApi {
 
   async getShows() {
     try {
-      const response = await axios.get(`${this.baseUrl}/showdates`, {
-        headers: {
-          Authorization: `Bearer ${this.apiKey}`,
-        },
-      });
-      return response.data;
+      const url = `${this.baseUrl}/showdates?api_key=${this.apiKey}`;
+      const response = await axios.get(url);
+      return response.date;
     } catch (error) {
       console.error("Error fetching shows : ", error);
       throw error;
     }
   }
 }
-
-//using bandsite API class
-
-const apiKey = "8a658617-935c-48e4-9ff3-129aeac3fbe0";
-const api = new BandsiteApi(apiKey);

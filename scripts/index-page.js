@@ -1,47 +1,61 @@
-// console.log("hello")
+//USING API
+//using bandsite API class
 
-const comments = [
-  {
-    name: "Victor Pinto",
-    timestamp: new Date(2023, 10, 2, 14, 30).getTime(),
-    textComment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    avatarUrl: "",
-  },
-  {
-    name: "Christina Cabrer",
-    timestamp: new Date(2023, 9, 28, 16, 45).getTime(),
-    textComment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day",
-    avatarUrl: "",
-  },
-  {
-    name: "Isaac Tadesse",
-    timestamp: new Date(2023, 9, 20, 18, 15).getTime(),
-    textComment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    avatarUrl: "",
-  },
-];
+const apiKey = "8a658617-935c-48e4-9ff3-129aeac3fbe0";
+const api = new BandsiteApi(apiKey);
+
+async function renderComments() {
+  const commentList = document.querySelector(".comment-list");
+  commentList.innerHTML = "";
+
+  try {
+    const comments = await api.getComments();
+
+    comments.forEach((comment) => {
+      createComment(
+        comment.name,
+        comment.timestamp,
+        comment.comment,
+        comment.avatarUrl
+      );
+    });
+  } catch (error) {
+    console.error("Error fetching comments:", error);
+  }
+}
+renderComments();
 
 //timestamp
 function timeAgo(timestamp) {
-    const now = Date.now();
-    const secondsAgo = Math.floor((now - timestamp) / 1000);
+  const now = Date.now();
+  const secondsAgo = Math.floor((now - timestamp) / 1000);
 
-    if (secondsAgo < 60) {
-      return "just now";
-    } else if (secondsAgo < 3600) {
-      const minutes = Math.floor(secondsAgo / 60);
-      return `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
-    } else if (secondsAgo < 86400) {
-      const hours = Math.floor(secondsAgo / 3600);
-      return `${hours} hour${hours > 1 ? "s" : ""} ago`;
-    } else {
-      const days = Math.floor(secondsAgo / 86400);
-      return `${days} day${days > 1 ? "s" : ""} ago`;
-    }
+  const minutes = 60; // 60 seconds
+  const hours = minutes * 60; // 3600 seconds
+  const days = hours * 24; // 86400 seconds
+  const months = days * 30; // Approximation: 30 days
+  const years = days * 365; // Approximation: 365 days
+
+  if (secondsAgo < minutes) {
+    return "just now";
+  } else if (secondsAgo < hours) {
+    const minsAgo = Math.floor(secondsAgo / minutes);
+    return `${minsAgo} minute${minsAgo > 1 ? "s" : ""} ago`;
+  } else if (secondsAgo < days) {
+    const hrsAgo = Math.floor(secondsAgo / hours);
+    return `${hrsAgo} hour${hrsAgo > 1 ? "s" : ""} ago`;
+  } else if (secondsAgo < months) {
+    const daysAgo = Math.floor(secondsAgo / days);
+    return `${daysAgo} day${daysAgo > 1 ? "s" : ""} ago`;
+  } else if (secondsAgo < years) {
+    const monthsAgo = Math.floor(secondsAgo / months);
+    return `${monthsAgo} month${monthsAgo > 1 ? "s" : ""} ago`;
+  } else {
+    const yearsAgo = Math.floor(secondsAgo / years);
+    return `${yearsAgo} year${yearsAgo > 1 ? "s" : ""} ago`;
+  }
 }
+
 //comments
 function createComment(name, timestamp, textComment, avatarUrl) {
   const commentSectionDiv = document.createElement("div");
@@ -95,29 +109,13 @@ function createComment(name, timestamp, textComment, avatarUrl) {
   console.log(commentSectionDiv);
 }
 
-function renderComments() {
-  const commentList = document.querySelector(".comment-list");
-  commentList.innerHTML = "";
-  comments.forEach((comment) => {
-    createComment(
-      comment.name,
-      comment.timestamp,
-      comment.textComment,
-      comment.avatarUrl
-    );
-  });
-}
-
-renderComments();
-//new comment with form validation
 document
   .getElementById("comment-form")
-  .addEventListener("submit", function (event) {
+  .addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const nameInput = document.getElementById("name");
     const commentInput = document.getElementById("comment");
-    const currentTimestamp = Date.now();
 
     clearErrorState(nameInput);
     clearErrorState(commentInput);
@@ -136,20 +134,21 @@ document
     if (isValid) {
       const newComment = {
         name: nameInput.value,
-        timestamp: currentTimestamp,
-        textComment: commentInput.value,
-        avatarUrl: "",
+        comment: commentInput.value,
       };
+      try {
+        await api.postComment(newComment);
+        //clearing the form feild
+        nameInput.value = "";
+        commentInput.value = "";
 
-      comments.unshift(newComment);
-
-      //clearing the form feild
-      nameInput.value = "";
-      commentInput.value = "";
-
-      renderComments();
+        renderComments();
+      } catch (error) {
+        console.error("Error posting comment : ", error);
+      }
     }
   });
+
 //setting error state
 function setErrorState(inputElement) {
   inputElement.classList.add("comments__input--error");

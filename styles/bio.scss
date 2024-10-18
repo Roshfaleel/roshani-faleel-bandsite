@@ -438,12 +438,15 @@ body {
     margin-bottom: 1.5rem;
 
     &__section {
-        padding-top: $padding-medium;
-        padding-bottom: $padding-medium;
+        padding: $padding-medium 0;
         display: flex;
         gap: 2rem;
         border-bottom: 0.0625rem solid $secondary-color-2;
-        height: 7rem;
+
+        @include tablet{
+            padding: $padding-regular 0;
+        }
+
     }
 
     &__avatar {
@@ -457,6 +460,7 @@ body {
 
     &__details {
         width: 100%;
+        height: auto;
         color: $secondary-color-1;
         @include p-font-mob;
 
@@ -477,6 +481,11 @@ body {
     }
     &__description {
         padding-top: 0.625rem;
+        @include tablet{
+            padding-top: 0;
+        }
+
+
     }
 }
 
