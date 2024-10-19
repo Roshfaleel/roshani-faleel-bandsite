@@ -129,7 +129,7 @@ body {
             display: grid;
             grid-template-columns: 2fr 2fr 2fr 2fr;
             @include label-tab;
-            padding-left: 1.125rem;
+            padding-left: 1.5rem;
             font-weight: 600;
             color: $primary-color-2;
         }
@@ -154,7 +154,7 @@ body {
         flex-direction: column;
         padding-top: $padding-medium;
         padding-bottom: $padding-medium;
-        border-bottom: 1px solid $primary-color-2;
+        border-bottom: 1px solid $secondary-color-2;
         @include p-font-mob;
 
         &:hover {
@@ -167,8 +167,9 @@ body {
 
         @include tablet {
             padding: $padding-regular;
-            margin-bottom: 36px;
+            margin-bottom: 24px;
             @include p-font-tab;
+
         }
     }
 

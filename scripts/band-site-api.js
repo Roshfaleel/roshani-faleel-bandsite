@@ -46,7 +46,7 @@ class BandsiteApi {
     try {
       const url = `${this.baseUrl}/showdates?api_key=${this.apiKey}`;
       const response = await axios.get(url);
-      return response.date;
+      return response.data;
     } catch (error) {
       console.error("Error fetching shows : ", error);
       throw error;
