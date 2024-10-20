@@ -578,12 +578,46 @@ body {
   color: #AFAFAF;
 }
 .comment-list__description {
-  padding-top: 0.625rem;
+  padding-top: 1rem;
 }
-@media screen and (min-width: 768px) {
-  .comment-list__description {
-    padding-top: 0;
-  }
+.comment-list__like-section {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  color: #AFAFAF;
+  padding-top: 1rem;
+}
+.comment-list__like-button {
+  margin-left: 10px;
+  width: 1rem;
+  height: 1rem;
+  background-image: url("../assets/icons/SVG/icon-like.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.comment-list__like-button:hover {
+  transform: translateY(-5px);
+  z-index: 1;
+}
+.comment-list__delete-button {
+  margin-left: 10px;
+  width: 1rem;
+  height: 1rem;
+  background-image: url("../assets/icons/SVG/icon-delete.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.comment-list__delete-button:hover {
+  transform: translateY(-5px);
+  z-index: 1;
 }
 
 .footer {

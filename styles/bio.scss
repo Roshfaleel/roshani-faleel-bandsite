@@ -480,12 +480,50 @@ body {
         }
     }
     &__description {
-        padding-top: 0.625rem;
-        @include tablet{
-            padding-top: 0;
+        padding-top: $padding-medium;
+        
+    }
+
+    &__like-section{
+        display: flex;
+        justify-content: flex-end;
+        align-content: center;
+        color: $primary-color-2;
+        padding-top: $padding-medium;
+    }
+
+    &__like-button{
+        margin-left: 10px;
+        width: 1rem;
+        height: 1rem;
+        background-image: url("../assets/icons/SVG/icon-like.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        &:hover {
+            transform: translateY(-5px);
+            z-index: 1;
         }
 
-
+    }
+    &__delete-button{
+        margin-left: 10px;
+       width: 1rem;
+        height: 1rem;
+        background-image: url("../assets/icons/SVG/icon-delete.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        &:hover {
+            transform: translateY(-5px);
+            z-index: 1;
+        }
     }
 }
 

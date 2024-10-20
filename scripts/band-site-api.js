@@ -52,4 +52,31 @@ class BandsiteApi {
       throw error;
     }
   }
+
+  //like comment
+
+  async likeComment(commentID) {
+    try {
+      const url = `${this.baseUrl}/comments/${commentID}/like?api_key=${this.apiKey}`;
+      const response = await axios.put(url);
+      return response.data;
+    } catch (error) {
+      console.error("Error liking the comment : ", error);
+      throw error;
+    }
+  }
+
+  //delete comment
+
+  async deleteComment(commentID) {
+    try {
+      const url = `${this.baseUrl}/comments/${commentID}?api_key=${this.apiKey}`;
+      console.log(url);
+      const response = await axios.delete(url);
+      return response.data;
+    } catch (error) {
+      console.error("Error deleting the comment :", error);
+      throw error;
+    }
+  }
 }

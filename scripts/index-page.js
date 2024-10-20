@@ -16,7 +16,9 @@ async function renderComments() {
         comment.name,
         comment.timestamp,
         comment.comment,
-        comment.avatarUrl
+        comment.avatarUrl,
+        comment.id,
+        comment.likes
       );
     });
   } catch (error) {
@@ -57,7 +59,14 @@ function timeAgo(timestamp) {
 }
 
 //comments
-function createComment(name, timestamp, textComment, avatarUrl) {
+function createComment(
+  name,
+  timestamp,
+  textComment,
+  avatarUrl,
+  commentId,
+  likes = 0
+) {
   const commentSectionDiv = document.createElement("div");
   commentSectionDiv.className = "comment-list__section";
 
@@ -95,14 +104,54 @@ function createComment(name, timestamp, textComment, avatarUrl) {
   textCommentEli.className = "comment-list__details--text";
   textCommentEli.textContent = textComment;
 
+  const commentLikesDiv = document.createElement("div");
+  commentLikesDiv.className = "comment-list__like-section";
+
+  const commentLike = document.createElement("p");
+  commentLike.textContent = `Likes: ${likes}`;
+
+  const likeButton = document.createElement("button");
+  likeButton.classList = "comment-list__like-button";
+  likeButton.setAttribute("data-id", commentId);
+
+  const deleteButton = document.createElement("button");
+  deleteButton.classList = "comment-list__delete-button";
+  deleteButton.setAttribute("data-id", commentId);
+
   commentInfoDiv.appendChild(nameEli);
   commentInfoDiv.appendChild(dateEli);
   commentDescriptionDiv.appendChild(textCommentEli);
+  commentLikesDiv.appendChild(commentLike);
+  commentLikesDiv.appendChild(likeButton);
+  commentLikesDiv.appendChild(deleteButton);
 
   commentSectionDiv.appendChild(avatarDiv);
   commentDetailsDiv.appendChild(commentInfoDiv);
   commentDetailsDiv.appendChild(commentDescriptionDiv);
+  commentDetailsDiv.appendChild(commentLikesDiv);
   commentSectionDiv.appendChild(commentDetailsDiv);
+
+  likeButton.addEventListener("click", async (event) => {
+    const commentId = event.target.getAttribute("data-id");
+    try {
+      const updatedComment = await api.likeComment(commentId);
+      commentLike.textContent = `Likes : ${updatedComment.likes}`;
+    } catch (error) {
+      console.error("Error liking comment : ", error);
+    }
+  });
+
+  deleteButton.addEventListener("click", async (event) => {
+    const commentId = event.target.getAttribute("data-id");
+    if (commentId) {
+      try {
+        await api.deleteComment(commentId);
+        commentSectionDiv.remove();
+      } catch (error) {
+        console.error("Error deleting comment : ", error);
+      }
+    }
+  });
 
   document.querySelector(".comment-list").appendChild(commentSectionDiv);
 
