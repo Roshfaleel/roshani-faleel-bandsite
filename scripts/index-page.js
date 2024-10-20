@@ -1,6 +1,3 @@
-//USING API
-//using bandsite API class
-
 const apiKey = "8a658617-935c-48e4-9ff3-129aeac3fbe0";
 const api = new BandsiteApi(apiKey);
 
@@ -154,8 +151,6 @@ function createComment(
   });
 
   document.querySelector(".comment-list").appendChild(commentSectionDiv);
-
-  console.log(commentSectionDiv);
 }
 
 document

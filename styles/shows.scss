@@ -169,7 +169,6 @@ body {
             padding: $padding-regular;
             margin-bottom: 24px;
             @include p-font-tab;
-
         }
     }
 
@@ -270,16 +269,10 @@ body {
             width: 7.5rem;
             padding-top: $padding-medium;
 
-            @include tablet {
-                width: 40%;
-                width: 6.25rem;
-                padding: 0;
-            }
-            img {
                 @include tablet {
                     width: 1.5625rem;
                     height: 1.5625rem;
-                }
+                    padding: 0;
             }
         }
     }

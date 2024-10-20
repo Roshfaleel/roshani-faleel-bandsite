@@ -37,7 +37,6 @@ async function displayEvents() {
 
   try {
     const events = await api.getShows();
-    console.log("API response:", events);
 
     //looping the events
     events.forEach((event) => {

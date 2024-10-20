@@ -53,7 +53,7 @@ class BandsiteApi {
     }
   }
 
-  //like comment
+  //put-like comment method
 
   async likeComment(commentID) {
     try {
@@ -66,12 +66,11 @@ class BandsiteApi {
     }
   }
 
-  //delete comment
+  //delete comment method
 
   async deleteComment(commentID) {
     try {
       const url = `${this.baseUrl}/comments/${commentID}?api_key=${this.apiKey}`;
-      console.log(url);
       const response = await axios.delete(url);
       return response.data;
     } catch (error) {
